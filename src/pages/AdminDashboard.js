@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import API from '../api';
 
 function AdminDashboard() {
-  const [flights, setFlights] = useState([]);
-  const [hotels, setHotels] = useState([]);
+  const [, setFlights] = useState([]);
+  const [, setHotels] = useState([]);
 
   const [newFlight, setNewFlight] = useState({ from: '', to: '', date: '', price: '' });
   const [newHotel, setNewHotel] = useState({ name: '', city: '', price: '' });

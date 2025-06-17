@@ -13,7 +13,7 @@ function FlightCard({ flight }) {
         body: JSON.stringify({ flightId: flight._id }),
       });
 
-      const data = await res.json();
+      await res.json();
       alert('Flight booked successfully!');
     } catch (err) {
       alert('Booking failed');
