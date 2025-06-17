@@ -6,6 +6,8 @@ import Flights from './pages/Flights';
 import Hotels from './pages/Hotels';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
+import AdminDashboard from './components/AdminDashboard'; // Update the path if it's in a different folder
+
 
 function App() {
   return (
