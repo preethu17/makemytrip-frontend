@@ -36,26 +36,26 @@ function AdminDashboard() {
       <input placeholder="Price" type="number" onChange={(e) => setNewFlight({ ...newFlight, price: e.target.value })} />
       <button onClick={addFlight}>Add Flight</button>
 
+      <h3>All Flights</h3>
+      <ul>
+        {flights.map(flight => (
+          <li key={flight._id}>
+            ✈️ {flight.from} → {flight.to} on {new Date(flight.date).toLocaleDateString()} — ₹{flight.price}
+          </li>
+        ))}
+      </ul>
+
       <h3>Add Hotel</h3>
       <input placeholder="Name" onChange={(e) => setNewHotel({ ...newHotel, name: e.target.value })} />
       <input placeholder="City" onChange={(e) => setNewHotel({ ...newHotel, city: e.target.value })} />
       <input placeholder="Price" type="number" onChange={(e) => setNewHotel({ ...newHotel, price: e.target.value })} />
       <button onClick={addHotel}>Add Hotel</button>
 
-      <h3>All Flights</h3>
-      <ul>
-        {flights.map((f) => (
-          <li key={f._id}>
-            ✈️ {f.from} → {f.to} | Date: {new Date(f.date).toLocaleDateString()} | Price: ₹{f.price}
-          </li>
-        ))}
-      </ul>
-
       <h3>All Hotels</h3>
       <ul>
-        {hotels.map((h) => (
-          <li key={h._id}>
-            🏨 {h.name} in {h.city} | Price: ₹{h.price}
+        {hotels.map(hotel => (
+          <li key={hotel._id}>
+            🏨 {hotel.name}, {hotel.city} — ₹{hotel.price}
           </li>
         ))}
       </ul>
