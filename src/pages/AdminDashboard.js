@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import API from '../api';
 
 function AdminDashboard() {
-  const [, setFlights] = useState([]);
-  const [, setHotels] = useState([]);
+  const [flights, setFlights] = useState([]);
+  const [hotels, setHotels] = useState([]);
 
   const [newFlight, setNewFlight] = useState({ from: '', to: '', date: '', price: '' });
   const [newHotel, setNewHotel] = useState({ name: '', city: '', price: '' });
 
   useEffect(() => {
+    // Fetch flights and hotels when the component mounts
     API.get('/flights').then(res => setFlights(res.data));
     API.get('/hotels').then(res => setHotels(res.data));
   }, []);
